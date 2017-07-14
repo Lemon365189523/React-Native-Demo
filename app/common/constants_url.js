@@ -4,7 +4,7 @@
  */
 
 /**主机*/
-const  kUrlHost = 'http://lemon.cn'
+const  kUrlHost = 'https://tstapp.360kad.com'
 
 //主页
-export const kUrlHomeList =  kUrlHost + '/home..'
+export const kUrlHomeList =  kUrlHost + '/ad/get?id=iOS.FWJ.Home';

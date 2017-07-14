@@ -1,23 +1,17 @@
 
 import React from 'react';
-import {
-    View,
-    Text
-} from 'react-native';
+//链接reducer
+import {connect} from 'react-redux';
+import HomePage from '../pages/homePage';
 
-import SearchBar from '../components/SearchBar';
-import LodingView from '../components/LodingView';
-
-export default class HomeContainer extends React.Component{
+class HomeContainer extends React.Component{
     render(){
         return(
-            <View>
-                <SearchBar/>
-                {/*<LodingView/>*/}
-                <Text>
-                    首页
-                </Text>
-            </View>
+            <HomePage {...this.props}/>
         )
     }
 }
+
+export default connect((state)=>{
+    return {homeReducer} = state;
+})(HomeContainer);

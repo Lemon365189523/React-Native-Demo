@@ -25,7 +25,7 @@ export default class SearchBar extends React.Component {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    activeOpacity={0.75}
+                    activeOpacity={1}
                     style={styles.searchInput}
                     onPress={this.props.searchAction}
                 >

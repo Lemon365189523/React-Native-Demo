@@ -36,19 +36,19 @@ let Util = {
 
         let fetchOptions = {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                // 'Content-Type': 'application/json'
-                'Content-Type': 'multipart/form-data',
-            },
+            // headers: {
+            //     'Accept': 'application/json',
+            //     // 'Content-Type': 'application/json'
+            //     'Content-Type': 'multipart/form-data',
+            // },
             body: formData
-            // body: JSON.stringify(data)
         };
 
         fetch(url, fetchOptions)
-            .then((response) => response.text())
-            .then((responseText) => {
-                let result = JSON.parse(responseText);
+            .then((response) => response.json())
+            .then((responseJson) => {
+                console.log(responseJson);
+                let result = responseJson;
                 successCallback(result.status, result.code, result.message, result.data, result.share);
             })
             .catch((err) => {
