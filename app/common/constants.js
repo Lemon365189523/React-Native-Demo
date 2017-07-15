@@ -14,8 +14,14 @@ let colors = {
     blue: '#3498db',
 }
 
+let fit750 = {
+    fit:(num)=>{
+        return ((num)*window.width/750.00);
+    }
+}
 
 export default {
     window: window,
-    colors: colors
+    colors: colors,
+    fit750: fit750
 }

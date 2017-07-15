@@ -9,7 +9,7 @@ export const kActionError                       = 'kActionError';
 export const kCommonIsToasting                  = 'kCommonIsToasting';
 
 //首页
-export const kBannerList                        = 'kBannerList';
+//加载首页layout
 export const kHomeLayout                        = 'kHomeLayout';
-export const kHomeListArticles                  = 'kHomeListArticles';
-export const kHomeListArticlesReceived          = 'kHomeListArticlesReceived';
+//完成加载
+export const kHomeLayoutReceived          = 'kHomeLayoutReceived';

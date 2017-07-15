@@ -47,7 +47,6 @@ let Util = {
         fetch(url, fetchOptions)
             .then((response) => response.json())
             .then((responseJson) => {
-                console.log(responseJson);
                 let result = responseJson;
                 successCallback(result.status, result.code, result.message, result.data, result.share);
             })

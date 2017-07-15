@@ -15,9 +15,17 @@ let homeReducer = (state = initialState, action) => {
         case types.kHomeLayout:
             return {
                 ...state,
-                layout: action.layout
+                isLoading:action.isLoading,
             }
             break;
+
+        case types.kHomeLayoutReceived:
+            return {
+                ...state,
+                layout: action.layout,
+                isLoading: false,
+            }
+
 
         default:
             return state;
