@@ -40,74 +40,30 @@ const testData = [
         }
     },
     {
-        cellId:'scrollCell',
+        cellId:'itemsCell',
         cellWidth: 750,
-        cellHeight: 350,
-        backgroundColor: '#ffff',
+        cellHeight: 0,
+        backgroundColor: '#565656',
         cellData:{
-            images:[
-                "http://tstimage.360kad.com/group1/M00/10/AD/wKgBEFgcTAyAA33IAALCRUInkLU403.png",
-                "http://tstimage.360kad.com/group1/M00/10/AD/wKgBEFgcTAyAA33IAALCRUInkLU403.png"
+            column: 4,
+            items:[
+                {icon:"",title:"1"},
+                {icon:"",title:"2"},
+                {icon:"",title:"3"},
+                {icon:"",title:"4"},
+                {icon:"",title:"5"},
+                {icon:"",title:"6"},
+                {icon:"",title:"7"},
+                {icon:"",title:"8"},
             ]
         }
     },
     {
-        cellId:'scrollCell',
+        cellId:'scrollTextCell',
         cellWidth: 750,
-        cellHeight: 350,
-        backgroundColor: '#ffff',
-        cellData:{
-            images:[
-                "http://tstimage.360kad.com/group1/M00/10/AD/wKgBEFgcTAyAA33IAALCRUInkLU403.png",
-                "http://tstimage.360kad.com/group1/M00/10/AD/wKgBEFgcTAyAA33IAALCRUInkLU403.png"
-            ]
+        cellHeight: 0,
+        cellData: {
+            text: "公告通知"
         }
-    },
-    {
-        cellId:'scrollCell',
-        cellWidth: 750,
-        cellHeight: 350,
-        backgroundColor: '#ffff',
-        cellData:{
-            images:[
-                "http://tstimage.360kad.com/group1/M00/10/AD/wKgBEFgcTAyAA33IAALCRUInkLU403.png",
-                "http://tstimage.360kad.com/group1/M00/10/AD/wKgBEFgcTAyAA33IAALCRUInkLU403.png"
-            ]
-        }
-    },
-    {
-        cellId:'scrollCell',
-        cellWidth: 750,
-        cellHeight: 350,
-        backgroundColor: '#ffff',
-        cellData:{
-            images:[
-                "http://tstimage.360kad.com/group1/M00/10/AD/wKgBEFgcTAyAA33IAALCRUInkLU403.png",
-                "http://tstimage.360kad.com/group1/M00/10/AD/wKgBEFgcTAyAA33IAALCRUInkLU403.png"
-            ]
-        }
-    },
-    // {
-    //     cellId:'itemsCell',
-    //     cellWidth: 750,
-    //     cellHeight: 0,
-    //     backgroundColor: '#565656',
-    //     cellData:{
-    //         column: 4,
-    //         items:[
-    //             {icon:"",title:"1"},
-    //             {icon:"",title:"2"},
-    //             {icon:"",title:"3"},
-    //             {icon:"",title:"4"},
-    //             {icon:"",title:"5"},
-    //             {icon:"",title:"6"},
-    //             {icon:"",title:"7"},
-    //             {icon:"",title:"8"},
-    //             {icon:"",title:"8"},
-    //             {icon:"",title:"8"},
-    //             {icon:"",title:"8"},
-    //             {icon:"",title:"8"}
-    //         ]
-    //     }
-    // }
+    }
 ]

@@ -24,7 +24,7 @@ export default class HomePage extends React.Component{
         const {homeReducer} = this.props;
         let layout = homeReducer.layout;
         return(
-            <View>
+            <View style={styles.listWrapper}>
                 <SearchBar/>
                 {homeReducer.isLoading ? <LodingView /> : <BasicListView style={styles.listView} layout={layout}/>}
             </View>
@@ -37,5 +37,8 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor: "#909090",
         minHeight: Common.window.height - 64 - 49,
+    },
+    listWrapper:{
+        flex: 1
     }
 })
