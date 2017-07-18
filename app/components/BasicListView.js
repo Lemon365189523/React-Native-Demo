@@ -39,7 +39,7 @@ export default class BasicListView extends React.Component {
                 return (<ItemsCell style={style} cellData={item.cellData} key={key}/>);
                 break;
             case 'scrollTextCell':
-                return (<ScrollTextCell style={style} cellData={item.cellData} key={key}/>)
+                return (<ScrollTextCell style={style} cellData={item.cellData} key={key}/>);
                 break;
             default:
                 return (null)

@@ -63,7 +63,7 @@ const testData = [
         cellWidth: 750,
         cellHeight: 0,
         cellData: {
-            text: "公告通知"
+            text: "公告通知：的角度看大姐夫克拉的进口量福利局啊点击加大是大非"
         }
     }
 ]
