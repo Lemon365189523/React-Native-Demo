@@ -20,13 +20,18 @@ export default class HomePage extends React.Component{
         dispatch(homelayout(isLoading));
     }
 
+    _navigatorAction(data){
+        const { navigate } = this.props.navigation;
+        navigate(data.path, data.data);
+    }
+
     render(){
         const {homeReducer} = this.props;
         let layout = homeReducer.layout;
         return(
             <View style={styles.listWrapper}>
-                <SearchBar/>
-                {homeReducer.isLoading ? <LodingView /> : <BasicListView style={styles.listView} layout={layout}/>}
+                {/*<SearchBar/>*/}
+                {homeReducer.isLoading ? <LodingView /> : <BasicListView style={styles.listView} layout={layout} navigatorAction={this._navigatorAction.bind(this)}/>}
             </View>
         )
     }

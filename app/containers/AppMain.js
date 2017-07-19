@@ -1,63 +1,26 @@
-import React, {Component} from 'react';
-import {
-    StyleSheet,
-    Image
-} from 'react-native';
-import TabNavigator from 'react-native-tab-navigator';
-import Images from '../images/images';
-const Item = TabNavigator.Item;
 
-import HomeContainer from './HomeContainer';
-import CategoryContainer from './CategoryContainer';
+import ProductContainer from './ProductContainer';
+import TabBarContainer from './TabBarContainer';
 
-export default class AppMain extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            selectedTab:'home'
-        }
-    }
+import  {
+    StackNavigator,
+} from 'react-navigation';
 
-    render(){
-        return(
-            <TabNavigator>
-               <Item
-                   title="首页"
-                   selected={this.state.selectedTab === 'home'}
-                   selectedTitleStyle={styles.selectedTextStyle}
-                   titleStyle={styles.textStyle}
-                   renderIcon={()=> <Image source={Images.home} style={styles.iconStyle}/>}
-                   renderSelectedIcon={() => <Image source={Images.homeSelected} style={styles.iconStyle}/>}
-                   onPress={() => this.setState({ selectedTab: 'home' })}
-               >
-                   <HomeContainer/>
-               </Item>
-                <Item
-                    title="分类"
-                    selected={this.state.selectedTab === 'category'}
-                    selectedTitleStyle={styles.selectedTextStyle}
-                    titleStyle={styles.textStyle}
-                    renderIcon={()=> <Image source={Images.category} style={styles.iconStyle}/>}
-                    renderSelectedIcon={() => <Image source={Images.categorySelected} style={styles.iconStyle}/>}
-                    onPress={() => this.setState({ selectedTab: 'category' })}
-                >
-                    <CategoryContainer/>
-                </Item>
-            </TabNavigator>
-        )
-    }
 
-}
-
-const styles=StyleSheet.create({
-    iconStyle:{
-        width:26,
-        height:26,
+//首页导航设置
+const HomeNavigator = StackNavigator({
+    Main: {
+        //首页为有TabBar的容器
+        screen: TabBarContainer,
     },
-    textStyle:{
-        color:'#2c3e50',
+    Product: {
+        screen: ProductContainer,
+        path: 'Product'
     },
-    selectedTextStyle:{
-        color:'#3498db',
-    }
-});
+},{
+    // headerMode: 'none',
+
+})
+
+export default HomeNavigator;
+

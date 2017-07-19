@@ -11,11 +11,12 @@ import Common from '../../common/constants';
 
 export default class ItemsCell extends React.Component{
 
+
     _renderItem(item,key){
         const column = this.props.cellData.column;
         const width = Common.window.width / column;
         return(
-            <TouchableOpacity key={key} onPress={()=>{console.log("点击item")}}>
+            <TouchableOpacity key={key} onPress={()=>{this.props.handleClick(item)}}>
                 <View style={styles.item}  width={width}>
                     <Image source={require("../../images/icon_saoyisao.png")} />
                     <Text style={styles.text}>{item.title}</Text>
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         flexWrap: 'wrap',
         backgroundColor:'#098',
-        justifyContent: 'space-around',
+        justifyContent: 'flex-start',
         alignItems: 'center',
     },
     item:{
