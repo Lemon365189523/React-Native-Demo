@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 
 export default class CountdownCell extends React.Component{
+
     render(){
 
         return(

@@ -7,7 +7,8 @@ const initialState = {
     isLoading: true,
     isLoadMore: false,
     isRefreshing: false,
-    layout: []
+    layout: [],
+    refreshing: false
 }
 
 let homeReducer = (state = initialState, action) => {
@@ -15,7 +16,9 @@ let homeReducer = (state = initialState, action) => {
         case types.kHomeLayout:
             return {
                 ...state,
-                isLoading:action.isLoading,
+                //如果是刷新的话就没有加载
+                isLoading:action.isRefreshing? false : action.isLoading,
+                refreshing: action.isRefreshing
             }
             break;
 
@@ -24,8 +27,9 @@ let homeReducer = (state = initialState, action) => {
                 ...state,
                 layout: action.layout,
                 isLoading: false,
+                refreshing: false,
             }
-
+            break;
 
         default:
             return state;

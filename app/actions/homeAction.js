@@ -4,17 +4,21 @@ import Util from '../common/utils';
 import * as urls from '../common/constants_url';
 import * as types from './types';
 
-export let homelayout = (isLoading) => {
+export let homelayout = (isLoading,isRefreshing) => {
     let url = urls.kUrlHomeList;
     console.log(url);
     return dispatch => {
         dispatch({
             type:types.kHomeLayout,
-            isLoading:isLoading
+            isLoading:isLoading,
+            isRefreshing: isRefreshing,
         });
         return Util.post(url,{}, (status, code, message, data, share) => {
             //请求成功 通过dispatch来通知reducer改变状态
             console.log('homelayout->请求成功')
+            if (isRefreshing){
+                testData.push(testItem);
+            }
             dispatch({type:types.kHomeLayoutReceived,layout:testData});
         },(error)=>{
             //请求失败
@@ -25,6 +29,12 @@ export let homelayout = (isLoading) => {
 
 }
 
+const testItem = {
+    cellId:'line',
+    cellWidth:750,
+    cellHeight: 100,
+    backgroundColor: 'blue'
+}
 
 const testData = [
     {
@@ -65,5 +75,11 @@ const testData = [
         cellData: {
             text: "公告通知：的角度看大姐夫克拉的进口量福利局啊点击加大是大非"
         }
+    },
+    {
+        cellId:'line',
+        cellWidth:750,
+        cellHeight: 10,
+        backgroundColor: '#909090'
     }
 ]

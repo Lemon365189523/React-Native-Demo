@@ -51,7 +51,6 @@ export default class ScrollTextCell extends React.Component{
     render(){
         const text = this.props.cellData.text;
         const {textWidth} = this.state;
-        console.log(textWidth);
         // const moving = this.animatedValue.interpolate({
         //     inputRange: [0, 1],
         //     outputRange: [-Common.window.width, Common.window.width]

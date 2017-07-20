@@ -16,11 +16,7 @@ import ProductContainer from '../containers/ProductContainer';
 export default class BasicListView extends React.Component {
     constructor(props){
         super(props);
-        // this.state = {
-        //     dataSource: new ListView.DataSource({
-        //         rowHasChanged: (row1,row2) => row1 !==row2
-        //     })
-        // }
+
     }
     _renderRow(obj){
         let item = obj.item;
@@ -43,6 +39,10 @@ export default class BasicListView extends React.Component {
             case 'scrollTextCell':
                 return (<ScrollTextCell style={style} cellData={item.cellData} key={key}/>);
                 break;
+            case 'line':
+                return (<View style={style}/>)
+                break;
+
             default:
                 return (null)
         }
@@ -66,6 +66,8 @@ export default class BasicListView extends React.Component {
                 <FlatList
                     data={this.props.layout}
                     renderItem={this._renderRow.bind(this)}
+                    // refreshing={this.props.refreshing}
+                    // onRefresh={this.props.onRefresh}
                 />
             </View>
         )

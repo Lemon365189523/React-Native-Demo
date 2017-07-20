@@ -1,9 +1,9 @@
 import {
-    Image
+    Image,
+    StyleSheet
 } from 'react-native';
 import HomeContainer from './HomeContainer';
 import CategoryContainer from './CategoryContainer';
-
 import Common from '../common/constants';
 import Images from '../images/images';
 import  {
@@ -15,17 +15,11 @@ const Tab = TabNavigator(
     {
         Home:{
             screen:HomeContainer,
-            navigationOptions:({navigation}) => ({
-                tabBarLabel:'首页',
 
-            }),
         },
-
-        Mine:{
+        Category:{
             screen:CategoryContainer,
-            navigationOptions:({navigation}) => ({
-                tabBarLabel:'我',
-            }),
+
         },
     },
 
@@ -49,3 +43,10 @@ const Tab = TabNavigator(
 );
 
 export default Tab;
+
+const styles = StyleSheet.create({
+    icon: {
+        width: 30,
+        height: 30
+    }
+})

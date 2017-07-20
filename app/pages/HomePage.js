@@ -12,12 +12,14 @@ import BasicListView from '../components/BasicListView';
 import Common from '../common/constants';
 
 let isLoading = true;
+let isRefreshing = false
 
 export default class HomePage extends React.Component{
 
     componentDidMount(){
         const {dispatch} = this.props;
-        dispatch(homelayout(isLoading));
+        //请求数据
+        dispatch(homelayout(isLoading, isRefreshing));
     }
 
     _navigatorAction(data){
@@ -25,13 +27,29 @@ export default class HomePage extends React.Component{
         navigate(data.path, data.data);
     }
 
+    _onRefresh(){
+        console.log('正在刷新');
+        isRefreshing = true;
+        const {dispatch} = this.props;
+        dispatch(homelayout(isLoading, isRefreshing));
+    }
+
     render(){
         const {homeReducer} = this.props;
         let layout = homeReducer.layout;
         return(
             <View style={styles.listWrapper}>
-                {/*<SearchBar/>*/}
-                {homeReducer.isLoading ? <LodingView /> : <BasicListView style={styles.listView} layout={layout} navigatorAction={this._navigatorAction.bind(this)}/>}
+                {
+                    homeReducer.isLoading ?
+                    <LodingView /> :
+                    <BasicListView
+                        style={styles.listView}
+                        layout={layout}
+                        navigatorAction={this._navigatorAction.bind(this)}
+                        refreshing={homeReducer.refreshing}
+                        onRefresh={this._onRefresh.bind(this)}
+                    />
+                }
             </View>
         )
     }
@@ -40,7 +58,6 @@ export default class HomePage extends React.Component{
 const styles = StyleSheet.create({
     listView: {
         flex:1,
-        backgroundColor: "#909090",
         minHeight: Common.window.height - 64 - 49,
     },
     listWrapper:{
