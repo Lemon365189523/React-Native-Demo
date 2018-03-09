@@ -7,7 +7,7 @@ import {
     ActivityIndicator
 } from 'react-native';
 
-import Common from '../common/constants';
+import Common from '../../../../../Documents/KADiOS/iOS/App/common/constants';
 
 export default class LodingView extends React.Component{
     render(){

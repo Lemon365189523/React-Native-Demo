@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import HomeContainer from './HomeContainer';
 import CategoryContainer from './CategoryContainer';
-import Common from '../common/constants';
+import Common from '../../../../../Documents/KADiOS/iOS/App/common/constants';
 import Images from '../images/images';
 import  {
     TabNavigator,

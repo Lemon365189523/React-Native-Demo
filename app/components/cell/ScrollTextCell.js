@@ -8,7 +8,7 @@ import {
     Animated
 } from 'react-native';
 import images from '../../images/images';
-import Common from '../../common/constants';
+import Common from '../../../../../../Documents/KADiOS/iOS/App/common/constants';
 
 export default class ScrollTextCell extends React.Component{
 

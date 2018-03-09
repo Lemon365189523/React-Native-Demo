@@ -10,8 +10,7 @@ import {
 import ScrollCell from './cell/ScrollCell';
 import ItemsCell from './cell/ItemsCell';
 import ScrollTextCell from './cell/ScrollTextCell';
-import Common from '../common/constants';
-import ProductContainer from '../containers/ProductContainer';
+import Common from '../../../../../Documents/KADiOS/iOS/App/common/constants';
 
 export default class BasicListView extends React.Component {
     constructor(props){

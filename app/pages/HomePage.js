@@ -9,7 +9,7 @@ import SearchBar from '../components/SearchBar';
 import {homelayout} from '../actions/homeAction';
 import LodingView from '../components/LodingView';
 import BasicListView from '../components/BasicListView';
-import Common from '../common/constants';
+import Common from '../../../../../Documents/KADiOS/iOS/App/common/constants';
 
 let isLoading = true;
 let isRefreshing = false

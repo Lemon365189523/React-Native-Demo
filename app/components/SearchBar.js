@@ -7,7 +7,7 @@ import {
     TouchableOpacity,
     Image,
 } from 'react-native';
-import Common from '../common/constants';
+import Common from '../../../../../Documents/KADiOS/iOS/App/common/constants';
 import Images from '../images/images';
 
 export default class SearchBar extends React.Component {

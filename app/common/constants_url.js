@@ -7,4 +7,4 @@
 const  kUrlHost = 'https://tstapp.360kad.com'
 
 //主页
-export const kUrlHomeList =  kUrlHost + '/ad/get?id=iOS.FWJ.Home';
+export const kUrlHomeList =  kUrlHost + '/ad/get?id=iOS.RN.Home';
